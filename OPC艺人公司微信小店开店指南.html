@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OPC艺人公司 · 微信小店开店全攻略</title>
+<style>
+  :root {
+    --green: #07C160;
+    --green-dark: #06A84F;
+    --green-light: #E8F9EF;
+    --orange: #FF8800;
+    --orange-light: #FFF5E6;
+    --red: #E34D59;
+    --red-light: #FEF0F0;
+    --blue: #1677FF;
+    --blue-light: #EFF5FF;
+    --gray: #8F959E;
+    --gray-light: #F7F8FA;
+    --dark: #1A1A2E;
+    --text: #333;
+    --border: #E8EAED;
+    --shadow: 0 4px 24px rgba(0,0,0,0.08);
+    --radius: 16px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #F0F4F9;
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    background: linear-gradient(135deg, #06A84F 0%, #07C160 50%, #09D96A 100%);
+    color: white;
+    padding: 56px 24px 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.07);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    padding: 4px 16px;
+    font-size: 13px;
+    margin-bottom: 16px;
+    backdrop-filter: blur(4px);
+  }
+  .hero h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  .hero p {
+    font-size: 15px;
+    opacity: 0.88;
+    max-width: 480px;
+    margin: 0 auto 24px;
+  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .hero-stat {
+    text-align: center;
+  }
+  .hero-stat .num {
+    font-size: 26px;
+    font-weight: 700;
+  }
+  .hero-stat .label {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-top: 2px;
+  }
+
+  /* ── Nav ── */
+  .nav {
+    background: white;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .nav-inner {
+    display: flex;
+    overflow-x: auto;
+    gap: 4px;
+    padding: 0 16px;
+    scrollbar-width: none;
+  }
+  .nav-inner::-webkit-scrollbar { display: none; }
+  .nav-btn {
+    flex-shrink: 0;
+    padding: 14px 16px;
+    border: none;
+    background: none;
+    color: var(--gray);
+    font-size: 14px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all .2s;
+    white-space: nowrap;
+  }
+  .nav-btn.active,
+  .nav-btn:hover {
+    color: var(--green);
+    border-bottom-color: var(--green);
+  }
+
+  /* ── Main ── */
+  .main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 16px 80px;
+  }
+
+  /* ── Section ── */
+  .section { display: none; }
+  .section.active { display: block; }
+
+  /* ── Card ── */
+  .card {
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+  .card-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-sub {
+    font-size: 13px;
+    color: var(--gray);
+    margin-bottom: 20px;
+  }
+
+  /* ── Phase Steps ── */
+  .phases {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .phase {
+    display: flex;
+    gap: 0;
+  }
+  .phase-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 48px;
+    flex-shrink: 0;
+  }
+  .phase-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+    z-index: 1;
+  }
+  .phase-line {
+    width: 2px;
+    flex: 1;
+    min-height: 24px;
+    margin: 4px 0;
+  }
+  .phase:last-child .phase-line { display: none; }
+  .phase-right {
+    flex: 1;
+    padding-bottom: 28px;
+    padding-left: 12px;
+  }
+  .phase-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    padding-top: 4px;
+  }
+  .phase-body {
+    font-size: 14px;
+    color: #555;
+  }
+  .phase-steps {
+    list-style: none;
+    margin-top: 10px;
+  }
+  .phase-steps li {
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .phase-steps li:last-child { border-bottom: none; }
+  .step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* Color schemes for phases */
+  .ph1 .phase-dot { background: #EFF5FF; color: #1677FF; border: 2px solid #1677FF; }
+  .ph1 .phase-line { background: linear-gradient(#1677FF, #07C160); }
+  .ph1 .step-num { background: #EFF5FF; color: #1677FF; }
+  .ph2 .phase-dot { background: var(--green-light); color: var(--green); border: 2px solid var(--green); }
+  .ph2 .phase-line { background: linear-gradient(var(--green), var(--orange)); }
+  .ph2 .step-num { background: var(--green-light); color: var(--green); }
+  .ph3 .phase-dot { background: var(--orange-light); color: var(--orange); border: 2px solid var(--orange); }
+  .ph3 .phase-line { background: linear-gradient(var(--orange), #9B59B6); }
+  .ph3 .step-num { background: var(--orange-light); color: var(--orange); }
+  .ph4 .phase-dot { background: #F5EEFF; color: #9B59B6; border: 2px solid #9B59B6; }
+  .ph4 .phase-line { background: linear-gradient(#9B59B6, #E34D59); }
+  .ph4 .step-num { background: #F5EEFF; color: #9B59B6; }
+  .ph5 .phase-dot { background: var(--red-light); color: var(--red); border: 2px solid var(--red); }
+  .ph5 .phase-line { display: none; }
+  .ph5 .step-num { background: var(--red-light); color: var(--red); }
+
+  /* ── Tag ── */
+  .tag {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 6px;
+    margin-bottom: 4px;
+  }
+  .tag-green { background: var(--green-light); color: var(--green-dark); }
+  .tag-orange { background: var(--orange-light); color: var(--orange); }
+  .tag-red { background: var(--red-light); color: var(--red); }
+  .tag-blue { background: var(--blue-light); color: var(--blue); }
+  .tag-gray { background: var(--gray-light); color: var(--gray); }
+
+  /* ── Alert ── */
+  .alert {
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin: 12px 0;
+    font-size: 14px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .alert-icon { font-size: 18px; flex-shrink: 0; }
+  .alert-warn { background: var(--orange-light); border-left: 4px solid var(--orange); }
+  .alert-error { background: var(--red-light); border-left: 4px solid var(--red); }
+  .alert-info { background: var(--blue-light); border-left: 4px solid var(--blue); }
+  .alert-success { background: var(--green-light); border-left: 4px solid var(--green); }
+
+  /* ── Checklist ── */
+  .checklist {
+    list-style: none;
+  }
+  .checklist li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background .1s;
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li:hover { background: var(--gray-light); border-radius: 8px; padding-left: 8px; }
+  .check-box {
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--border);
+    border-radius: 6px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .2s;
+    margin-top: 1px;
+  }
+  .check-box.checked {
+    background: var(--green);
+    border-color: var(--green);
+    color: white;
+  }
+  .check-content { flex: 1; }
+  .check-title { font-weight: 600; margin-bottom: 2px; }
+  .check-note { font-size: 12px; color: var(--gray); }
+
+  /* ── Pitfall ── */
+  .pitfall-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .pitfall-item {
+    background: var(--red-light);
+    border-radius: 12px;
+    padding: 16px;
+    border-left: 4px solid var(--red);
+  }
+  .pitfall-q {
+    font-weight: 700;
+    color: var(--red);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .pitfall-a {
+    font-size: 14px;
+    color: #555;
+    padding-left: 4px;
+  }
+  .solution {
+    margin-top: 8px;
+    background: var(--green-light);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 13px;
+    color: var(--green-dark);
+    border-left: 3px solid var(--green);
+  }
+
+  /* ── Material Grid ── */
+  .mat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+    margin-top: 12px;
+  }
+  .mat-card {
+    background: var(--gray-light);
+    border-radius: 12px;
+    padding: 14px;
+    border: 1px solid var(--border);
+  }
+  .mat-icon { font-size: 24px; margin-bottom: 8px; }
+  .mat-title { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+  .mat-note { font-size: 12px; color: var(--gray); }
+  .mat-card.required { border-left: 3px solid var(--green); }
+  .mat-card.optional { border-left: 3px solid var(--gray); }
+  .mat-card.conditional { border-left: 3px solid var(--orange); }
+
+  /* ── Skill Package ── */
+  .module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .module-card {
+    background: white;
+    border-radius: 14px;
+    padding: 18px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform .2s, box-shadow .2s;
+    cursor: pointer;
+  }
+  .module-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+  }
+  .module-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+  .module-title { font-weight: 700; margin-bottom: 4px; }
+  .module-desc { font-size: 13px; color: var(--gray); }
+
+  /* ── Timeline ── */
+  .timeline-wrap {
+    overflow-x: auto;
+    padding: 8px 0;
+    -webkit-overflow-scrolling: touch;
+  }
+  .timeline {
+    display: flex;
+    align-items: flex-start;
+    min-width: 720px;
+    gap: 0;
+    position: relative;
+    padding: 24px 0 8px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 38px;
+    left: 36px;
+    right: 36px;
+    height: 3px;
+    background: linear-gradient(90deg, #1677FF, #07C160, #FF8800, #9B59B6, #E34D59);
+    border-radius: 2px;
+  }
+  .tl-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 130px;
+  }
+  .tl-dot {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 10px;
+    box-shadow: 0 0 0 4px white;
+  }
+  .tl-label {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .tl-time {
+    font-size: 11px;
+    color: var(--gray);
+    background: var(--gray-light);
+    padding: 2px 8px;
+    border-radius: 10px;
+  }
+
+  /* Progress Bar */
+  .progress-wrap { margin: 16px 0; }
+  .progress-label { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px; }
+  .progress-bar {
+    height: 8px;
+    background: var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    border-radius: 8px;
+    background: var(--green);
+    transition: width .6s ease;
+  }
+
+  /* ── FAQ ── */
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+  }
+  .faq-q {
+    padding: 16px 0;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    transition: color .2s;
+  }
+  .faq-q:hover { color: var(--green); }
+  .faq-arrow {
+    font-size: 12px;
+    transition: transform .3s;
+    color: var(--gray);
+    flex-shrink: 0;
+  }
+  .faq-a {
+    font-size: 14px;
+    color: #555;
+    padding-bottom: 16px;
+    display: none;
+    line-height: 1.8;
+  }
+  .faq-a.open { display: block; }
+  .faq-q.open .faq-arrow { transform: rotate(180deg); color: var(--green); }
+  .faq-q.open { color: var(--green); }
+
+  /* ── Bottom bar ── */
+  .bottom-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: white;
+    border-top: 1px solid var(--border);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+    z-index: 99;
+  }
+  .progress-mini { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--gray); }
+  .progress-mini .count { color: var(--green); font-weight: 700; }
+  .btn-primary {
+    background: var(--green);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s;
+  }
+  .btn-primary:hover { background: var(--green-dark); }
+
+  /* ── divider ── */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 20px 0;
+  }
+
+  /* ── Two col ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 600px) {
+    .two-col { grid-template-columns: 1fr; }
+    .mat-grid { grid-template-columns: 1fr 1fr; }
+    .module-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* Legend */
+  .legend { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--gray); }
+  .legend-dot { width: 10px; height: 10px; border-radius: 2px; }
+
+  /* Table */
+  .simple-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 12px;
+  }
+  .simple-table th {
+    background: var(--gray-light);
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--gray);
+  }
+  .simple-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .simple-table tr:last-child td { border-bottom: none; }
+
+  /* Skill badges */
+  .skill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--green-light);
+    color: var(--green-dark);
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 4px;
+  }
+
+  /* Step counter */
+  #step-counter {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-badge">🎵 OPC艺人公司专属指南 · 2026年最新版</div>
+  <h1>微信小店开店全攻略<br>从 0 到 1 挂出第一个商品</h1>
+  <p>教育产品 · 服务产品 · 知识付费，适合艺人/内容创作者/OPC公司</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="num">5</div><div class="label">核心阶段</div></div>
+    <div class="hero-stat"><div class="num">28</div><div class="label">操作步骤</div></div>
+    <div class="hero-stat"><div class="num">15+</div><div class="label">避坑提示</div></div>
+    <div class="hero-stat"><div class="num">30天</div><div class="label">预计完成</div></div>
+  </div>
+</div>
+
+<!-- Nav -->
+<div class="nav">
+  <div class="nav-inner">
+    <button class="nav-btn active" onclick="switchTab('flow')">📋 完整流程</button>
+    <button class="nav-btn" onclick="switchTab('checklist')">✅ 备料清单</button>
+    <button class="nav-btn" onclick="switchTab('icp')">🔒 ICP备案</button>
+    <button class="nav-btn" onclick="switchTab('store')">🏪 开店步骤</button>
+    <button class="nav-btn" onclick="switchTab('upload')">📦 商品上架</button>
+    <button class="nav-btn" onclick="switchTab('pitfalls')">⚠️ 避坑手册</button>
+    <button class="nav-btn" onclick="switchTab('skill')">🧩 通用技能包</button>
+    <button class="nav-btn" onclick="switchTab('faq')">💬 常见问答</button>
+  </div>
+</div>
+
+<!-- Main -->
+<div class="main">
+
+  <!-- ===== 完整流程 ===== -->
+  <div class="section active" id="section-flow">
+    <div class="card">
+      <div class="card-title">🗺️ 全局总览：5大阶段 30天落地</div>
+      <div class="card-sub">按顺序走完每个阶段，不跳步、不漏步，即可成功上架商品</div>
+
+      <div class="timeline-wrap">
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot" style="background:#1677FF">1</div>
+            <div class="tl-label">公司准备</div>
+            <div class="tl-time">第1-3天</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot" style="background:#07C160">2</div>
+            <div class="tl-label">ICP备案</div>
+            <div class="tl-time">第4-20天</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot" style="background:#FF8800">3</div>
+            <div class="tl-label">开通微信小店</div>
+            <div class="tl-time">第21-23天</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot" style="background:#9B59B6">4</div>
+            <div class="tl-label">申请类目资质</div>
+            <div class="tl-time">第24-26天</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot" style="background:#E34D59">5</div>
+            <div class="tl-label">商品上架销售</div>
+            <div class="tl-time">第27-30天</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert alert-info">
+        <span class="alert-icon">💡</span>
+        <div><strong>最耗时的步骤是 ICP 备案</strong>，工信部审核通常需要 10-20 个工作日。其余步骤总共约需 5-7 个工作日。建议在第1天就同步启动域名注册和ICP备案，不要等到开店后再做。</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📋 阶段详解</div>
+      <div class="card-sub">点击每个步骤了解详细操作方法</div>
+
+      <div class="phases">
+        <!-- Phase 1 -->
+        <div class="phase ph1">
+          <div class="phase-left">
+            <div class="phase-dot">①</div>
+            <div class="phase-line"></div>
+          </div>
+          <div class="phase-right">
+            <div class="phase-title" style="color:#1677FF">🏢 阶段一：公司合规准备（第1-3天）</div>
+            <div class="phase-body">确保OPC公司主体资质符合开店要求，是一切的基础。</div>
+            <ul class="phase-steps">
+              <li>
+                <span class="step-num" style="background:#EFF5FF;color:#1677FF">1</span>
+                <div>
+                  <strong>检查营业执照经营范围</strong><br>
+                  <span style="color:#888;font-size:13px">必须包含以下关键词之一：「教育咨询」「信息咨询服务」「互联网信息服务」「文化艺术活动策划」。<br>⚠️ 注意：经营范围中含「教育培训」需要办学许可证，建议改为「教育咨询」或「非学历教育培训」</span>
+                </div>
+              </li>
+              <li>
+                <span class="step-num" style="background:#EFF5FF;color:#1677FF">2</span>
+                <div>
+                  <strong>准备法人身份证正反面扫描件</strong><br>
+                  <span style="color:#888;font-size:13px">清晰彩色，不能有水印，需在有效期内</span>
+                </div>
+              </li>
+              <li>
+                <span class="step-num" style="background:#EFF5FF;color:#1677FF">3</span>
+                <div>
+                  <strong>确认银行账户</strong><br>
+                  <span style="color:#888;font-size:13px">对公账户（推荐）：名称需与营业执照完全一致 / 对私账户：需与法人信息一致</span>
+                </div>
+              </li>
+              <li>
+                <span class="step-num" style="background:#EFF5FF;color:#1677FF">4</span>
+                <div>
+                  <strong>注册一个国内顶级域名</strong><br>
+                  <span style="color:#888;font-size:13px">推荐：阿里云 / 腾讯云 购买 .com 或 .cn 域名。完成域名实名认证（1-3天），这是ICP备案前置条件</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Phase 2 -->
+        <div class="phase ph2">
+          <div class="phase-left">
+            <div class="phase-dot">②</div>
+            <div class="phase-line"></div>
+          </div>
+          <div class="phase-right">
+            <div class="phase-title" style="color:#07C160">🔒 阶段二：ICP 备案（第4-20天）</div>
+            <div class="phase-body">ICP备案是上架教育/服务类虚拟商品的必要资质，需提前启动，耐心等待。</div>
+            <ul class="phase-steps">
+              <li>
+                <span class="step-num" style="background:var(--green-light);color:var(--green)">1</span>
+                <div>
+                  <strong>购买云服务器（选择同一服务商）</strong><br>
+                  <span style="color:#888;font-size:13px">推荐腾讯云/阿里云，购买1年轻量应用服务器（约100元/年），域名和服务器需在同一服务商备案更顺畅</span>
+                </div>
+              </li>
+              <li>
+                <span class="step-num" style="background:var(--green-light);color:var(--green)">2</span>
+                <div>
+                  <strong>登录云服务商备案系统提交申请</strong><br>
+                  <span style="color:#888;font-size:13px">阿里云：beian.aliyun.com / 腾讯云：beian.cloud.tencent.com<br>填写主体信息、网站信息，上传营业执照+法人身份证</span>
+                </div>
+              </li>
+              <li>
+                <span class="step-num" style="background:var(--green-light);color:var(--green)">3</span>
+                <div>
+                  <strong>服务商初审（1-3个工作日）</strong><br>
+                  <span style="color:#888;font-size:13px">服务商检查材料，不通过会退回修改，注意查收邮件/短信通知</span>
+                </div>
+              </li>
+              <li>
+                <span class="step-num" style="background:var(--green-light);color:var(--green)">4</span>
+                <div>
+                  <strong>完成工信部短信核验</strong><br>
+                  <span style="color:#888;font-size:13px">法人手机接收工信部验证码，需在24小时内完成验证</span>
+                </div>
+              </li>
+              <li>
+                <span class="step-num" style="background:var(--green-light);color:var(--green)">5</span>
+                <div>
+                  <strong>等待管局审核（10-20个工作日）</strong><br>
+                  <span style="color:#888;font-size:13px">可在工信部网站 beian.miit.gov.cn 查询进度，通过后收到备案号（格式：粤ICP备XXXXXXXX号）</span>
+                </div>
+              </li>
+              <li>
+                <span class="step-num" style="background:var(--green-light);color:var(--green)">6</span>
+                <div>
+                  <strong>保存备案证明截图</strong><br>
+                  <span style="color:#888;font-size:13px">在工信部官网截图，备用于微信小店资质提交</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Phase 3 -->
+        <div class="phase ph3">
+          <div class="phase-left">
+            <div class="phase-dot">③</div>
+            <div class="phase-line"></div>
+          </div>
+          <div class="phase-right">
+            <div class="phase-title" style="color:#FF8800">🏪 阶段三：开通微信小店（第21-23天）</div>
+            <div class="phase-body">正式注册微信小店账号，完成身份验证和店铺设置。</div>
+            <ul class="phase-steps">
+              <li>
+                <span class="step-num" style="background:var(--orange-light);color:var(--orange)">1</span>
+                <div>
+                  <strong>进入开店入口</strong><br>
+                  <span style="color:#888;font-size:13px">方式A：微信搜索「微信小店开店」→ 点击立即开店<br>方式B：电脑访问 store.weixin.qq.com → 扫码登录</span>
+                </div>
+              </li>
+              <li>
+                <span class="step-num" style="background:var(--orange-light);color:var(--orange)">2</span>
+                <div>
+                  <strong>上传营业执照 + 身份证</strong><br>
+                  <span style="color:#888;font-size:13px">系统自动OCR识别，确认信息无误后继续。已注册公众号/视频号可一键导入主体信息</span>
+                </div>
+              </li>
+              <li>
+                <span class="step-num" style="background:var(--orange-light);color:var(--orange)">3</span>
+                <div>
+                  <strong>绑定超级管理员微信</strong><br>
+                  <span style="color:#888;font-size:13px">超级管理员负责日常运营。若非法人本人，需在30天内完成法人扫码验证或公户汇款验证</span>
+                </div>
+              </li>
+              <li>
+                <span class="step-num" style="background:var(--orange-light);color:var(--orange)">4</span>
+                <div>
+                  <strong>绑定收款账户</strong><br>
+                  <span style="color:#888;font-size:13px">填写银行卡信息，验证账户有效性（系统会打入小额验证款）</span>
+                </div>
+              </li>
+              <li>
+                <span class="step-num" style="background:var(--orange-light);color:var(--orange)">5</span>
+                <div>
+                  <strong>设置店铺基本信息并提交审核</strong><br>
+                  <span style="color:#888;font-size:13px">店名：简洁有辨识度，可包含艺人名/品牌名<br>Logo：建议800×800px以上，清晰无水印<br>审核时长：1-3个工作日</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Phase 4 -->
+        <div class="phase ph4">
+          <div class="phase-left">
+            <div class="phase-dot">④</div>
+            <div class="phase-line"></div>
+          </div>
+          <div class="phase-right">
+            <div class="phase-title" style="color:#9B59B6">📂 阶段四：申请教育类目资质（第24-26天）</div>
+            <div class="phase-body">上架教育/服务类商品必须先申请对应类目，类目未通过则无法上架。</div>
+            <ul class="phase-steps">
+              <li>
+                <span class="step-num" style="background:#F5EEFF;color:#9B59B6">1</span>
+                <div>
+                  <strong>进入小店后台 → 类目管理 → 申请类目</strong><br>
+                  <span style="color:#888;font-size:13px">找到「教育培训」或「知识付费」类目，点击申请</span>
+                </div>
+              </li>
+              <li>
+                <span class="step-num" style="background:#F5EEFF;color:#9B59B6">2</span>
+                <div>
+                  <strong>准备并上传类目资质材料</strong><br>
+                  <span style="color:#888;font-size:13px">
+                    必需材料：<br>
+                    ① 营业执照（经营范围包含教育咨询/信息咨询）<br>
+                    ② ICP备案证明截图<br>
+                    ③ 产品经营说明书（说明课程内容、目标受众、授课形式）<br><br>
+                    根据具体子类目可能还需要：<br>
+                    ④ 讲师资质证书（如培训师证、职业资格证）<br>
+                    ⑤ 相关学历或执业证明
+                  </span>
+                </div>
+              </li>
+              <li>
+                <span class="step-num" style="background:#F5EEFF;color:#9B59B6">3</span>
+                <div>
+                  <strong>等待微信官方审核（1-5个工作日）</strong><br>
+                  <span style="color:#888;font-size:13px">审核通过后，对应类目会显示「已开通」</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Phase 5 -->
+        <div class="phase ph5">
+          <div class="phase-left">
+            <div class="phase-dot">⑤</div>
+            <div class="phase-line"></div>
+          </div>
+          <div class="phase-right">
+            <div class="phase-title" style="color:#E34D59">🛍️ 阶段五：商品上架与销售（第27-30天）</div>
+            <div class="phase-body">正式发布商品，设置价格、描述、发货方式，开始接单收款。</div>
+            <ul class="phase-steps">
+              <li>
+                <span class="step-num" style="background:var(--red-light);color:var(--red)">1</span>
+                <div>
+                  <strong>进入商品管理 → 添加商品</strong><br>
+                  <span style="color:#888;font-size:13px">选择「虚拟商品」类型（教育课程、服务咨询均属此类）</span>
+                </div>
+              </li>
+              <li>
+                <span class="step-num" style="background:var(--red-light);color:var(--red)">2</span>
+                <div>
+                  <strong>填写商品信息</strong><br>
+                  <span style="color:#888;font-size:13px">
+                    商品标题：不超过34字，包含核心关键词<br>
+                    主图：900×900px，白底或场景图，6张以内<br>
+                    价格：设置原价和促销价<br>
+                    详情页：用图文/视频说明课程内容、学习效果
+                  </span>
+                </div>
+              </li>
+              <li>
+                <span class="step-num" style="background:var(--red-light);color:var(--red)">3</span>
+                <div>
+                  <strong>设置发货方式</strong><br>
+                  <span style="color:#888;font-size:13px">
+                    虚拟商品选「自动发货」（付款后自动发送课程链接/兑换码）<br>
+                    或「手动发货」（客服24小时内发送）<br>
+                    建议设置「付款后发货」，并在商品描述中说明发货时效
+                  </span>
+                </div>
+              </li>
+              <li>
+                <span class="step-num" style="background:var(--red-light);color:var(--red)">4</span>
+                <div>
+                  <strong>提交商品审核（1-3个工作日）</strong><br>
+                  <span style="color:#888;font-size:13px">审核通过后，商品自动上架显示</span>
+                </div>
+              </li>
+              <li>
+                <span class="step-num" style="background:var(--red-light);color:var(--red)">5</span>
+                <div>
+                  <strong>生成商品链接/二维码，开始推广</strong><br>
+                  <span style="color:#888;font-size:13px">
+                    分享至：视频号主页 → 朋友圈 → 微信群 → 公众号文章<br>
+                    也可在直播时挂购物车商品，引导粉丝购买
+                  </span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 备料清单 ===== -->
+  <div class="section" id="section-checklist">
+    <div class="card">
+      <div class="card-title">✅ 备料清单（可勾选）</div>
+      <div class="card-sub">提前备好所有材料，避免在关键节点被卡住。点击打勾标记完成</div>
+
+      <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div> 必须</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--orange)"></div> 视情况</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--gray)"></div> 可选</div>
+      </div>
+
+      <p style="font-size:14px;font-weight:700;margin-bottom:12px;color:#333">🏢 公司基础材料</p>
+      <ul class="checklist" id="checklist-main">
+        <li onclick="toggleCheck(this)">
+          <div class="check-box">✓</div>
+          <div class="check-content">
+            <div class="check-title">营业执照副本（彩色）<span class="tag tag-green">必须</span></div>
+            <div class="check-note">三证合一，清晰彩色照片或扫描件，不能有水印</div>
+          </div>
+        </li>
+        <li onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-title">法人身份证（正反面）<span class="tag tag-green">必须</span></div>
+            <div class="check-note">清晰彩色，有效期内，姓名与营业执照法人一致</div>
+          </div>
+        </li>
+        <li onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-title">公司银行账户信息<span class="tag tag-green">必须</span></div>
+            <div class="check-note">对公账户（推荐）：开户名与营业执照名称完全一致</div>
+          </div>
+        </li>
+        <li onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-title">法人本人实名微信号<span class="tag tag-green">必须</span></div>
+            <div class="check-note">用于绑定超级管理员，或法人验证</div>
+          </div>
+        </li>
+        <li onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-title">法人本人手机号（与微信绑定）<span class="tag tag-green">必须</span></div>
+            <div class="check-note">用于工信部ICP备案短信核验</div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="divider"></div>
+      <p style="font-size:14px;font-weight:700;margin-bottom:12px;color:#333">🔒 ICP备案材料</p>
+      <ul class="checklist">
+        <li onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-title">已注册的国内域名<span class="tag tag-green">必须</span></div>
+            <div class="check-note">在阿里云/腾讯云购买，完成实名认证，格式如 xxx.com</div>
+          </div>
+        </li>
+        <li onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-title">购买国内云服务器<span class="tag tag-green">必须</span></div>
+            <div class="check-note">与域名在同一服务商（约100元/年轻量版），用于备案</div>
+          </div>
+        </li>
+        <li onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-title">ICP备案号（审核通过后获取）<span class="tag tag-green">必须</span></div>
+            <div class="check-note">格式如：粤ICP备XXXXXXXX号-1，需截图保存</div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="divider"></div>
+      <p style="font-size:14px;font-weight:700;margin-bottom:12px;color:#333">📂 教育类目资质</p>
+      <ul class="checklist">
+        <li onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-title">产品经营说明书<span class="tag tag-green">必须</span></div>
+            <div class="check-note">说明：授课平台、主营类目、目标受众、课程形式（约200-500字）</div>
+          </div>
+        </li>
+        <li onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-title">讲师资质证书<span class="tag tag-orange">视课程类型</span></div>
+            <div class="check-note">如全媒体运营师证、职业培训师证、相关行业执业资格证等</div>
+          </div>
+        </li>
+        <li onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-title">办学许可证<span class="tag tag-orange">如涉及培训机构</span></div>
+            <div class="check-note">若营业执照含「教育培训」字样才需要，建议改为「教育咨询」规避</div>
+          </div>
+        </li>
+        <li onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-title">ICP增值电信业务经营许可证<span class="tag tag-orange">经营性网站才需要</span></div>
+            <div class="check-note">只做小店挂课程，ICP备案（免费）即可；若独立经营网站才需申请许可证</div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="divider"></div>
+      <p style="font-size:14px;font-weight:700;margin-bottom:12px;color:#333">🎨 商品制作素材</p>
+      <ul class="checklist">
+        <li onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-title">课程/服务封面主图<span class="tag tag-green">必须</span></div>
+            <div class="check-note">尺寸900×900px，清晰，展示核心卖点</div>
+          </div>
+        </li>
+        <li onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-title">商品详情页图文<span class="tag tag-green">必须</span></div>
+            <div class="check-note">说明课程内容、亮点、适用人群、学完效果</div>
+          </div>
+        </li>
+        <li onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-title">课程内容（视频/音频/文档）<span class="tag tag-orange">虚拟发货用</span></div>
+            <div class="check-note">上传至网盘、小鹅通、知识星球等，生成付费链接备用</div>
+          </div>
+        </li>
+        <li onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div class="check-content">
+            <div class="check-title">店铺Logo<span class="tag tag-gray">建议准备</span></div>
+            <div class="check-note">800×800px以上，PNG格式，清晰无水印</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="card" style="background:linear-gradient(135deg,#07C160,#09D96A);color:white;">
+      <div style="font-size:18px;font-weight:700;margin-bottom:8px">📊 完成进度</div>
+      <div style="font-size:14px;opacity:0.9;margin-bottom:16px">勾选上方清单后，进度会自动更新</div>
+      <div style="background:rgba(255,255,255,0.2);border-radius:8px;height:10px;overflow:hidden;">
+        <div id="progress-bar-fill" style="height:100%;background:white;border-radius:8px;width:7%;transition:width .5s;"></div>
+      </div>
+      <div style="margin-top:8px;font-size:14px">已完成 <span id="progress-text" style="font-weight:700">1</span> / 14 项</div>
+    </div>
+  </div>
+
+  <!-- ===== ICP备案 ===== -->
+  <div class="section" id="section-icp">
+    <div class="card">
+      <div class="card-title">🔒 ICP备案详细教程</div>
+      <div class="card-sub">专门为不懂技术的艺人/内容创作者设计，手把手教你完成备案</div>
+
+      <div class="alert alert-info">
+        <span class="alert-icon">📌</span>
+        <div><strong>什么是ICP备案？</strong><br>ICP备案是中国大陆政府对互联网内容提供商的登记备案制度。你的公司只要想在网上提供教育/服务类产品，就必须完成这个登记，就像开实体店要办营业执照一样。<br><br>✅ 备案完全免费，官方不收钱<br>✅ 通过服务商（阿里云/腾讯云）系统操作，不需要编程知识</div>
+      </div>
+
+      <div class="divider"></div>
+      <p style="font-weight:700;font-size:16px;margin-bottom:16px">📝 备案全流程图解</p>
+
+      <table class="simple-table">
+        <tr>
+          <th>步骤</th>
+          <th>操作</th>
+          <th>预计时长</th>
+          <th>难度</th>
+        </tr>
+        <tr>
+          <td><span class="step-num" style="background:var(--green-light);color:var(--green);display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%">1</span></td>
+          <td>购买域名 + 实名认证</td>
+          <td>1天</td>
+          <td><span class="tag tag-green">简单</span></td>
+        </tr>
+        <tr>
+          <td><span class="step-num" style="background:var(--green-light);color:var(--green);display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%">2</span></td>
+          <td>购买国内服务器（同一服务商）</td>
+          <td>半天</td>
+          <td><span class="tag tag-green">简单</span></td>
+        </tr>
+        <tr>
+          <td><span class="step-num" style="background:var(--green-light);color:var(--green);display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%">3</span></td>
+          <td>登录服务商备案系统填写信息</td>
+          <td>2小时</td>
+          <td><span class="tag tag-orange">中等</span></td>
+        </tr>
+        <tr>
+          <td><span class="step-num" style="background:var(--green-light);color:var(--green);display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%">4</span></td>
+          <td>上传证件材料</td>
+          <td>30分钟</td>
+          <td><span class="tag tag-green">简单</span></td>
+        </tr>
+        <tr>
+          <td><span class="step-num" style="background:var(--green-light);color:var(--green);display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%">5</span></td>
+          <td>等待服务商初审</td>
+          <td>1-3天</td>
+          <td><span class="tag tag-gray">等待</span></td>
+        </tr>
+        <tr>
+          <td><span class="step-num" style="background:var(--green-light);color:var(--green);display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%">6</span></td>
+          <td>工信部短信核验（法人手机操作）</td>
+          <td>5分钟</td>
+          <td><span class="tag tag-green">简单</span></td>
+        </tr>
+        <tr>
+          <td><span class="step-num" style="background:var(--green-light);color:var(--green);display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%">7</span></td>
+          <td>管局审核（工信部）</td>
+          <td>10-20天</td>
+          <td><span class="tag tag-gray">等待</span></td>
+        </tr>
+        <tr>
+          <td><span class="step-num" style="background:var(--green-light);color:var(--green);display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%">8</span></td>
+          <td>收到备案号，截图保存</td>
+          <td>即时</td>
+          <td><span class="tag tag-green">简单</span></td>
+        </tr>
+      </table>
+
+      <div class="divider"></div>
+
+      <div class="two-col">
+        <div>
+          <p style="font-weight:700;margin-bottom:10px">✅ 经营范围推荐写法</p>
+          <div class="alert alert-success">
+            <span class="alert-icon">👍</span>
+            <div>
+              <strong>推荐（备案顺畅）：</strong><br>
+              · 教育信息咨询<br>
+              · 互联网信息服务<br>
+              · 信息技术咨询<br>
+              · 文化艺术活动策划
+            </div>
+          </div>
+        </div>
+        <div>
+          <p style="font-weight:700;margin-bottom:10px">❌ 慎用（会触发额外审批）</p>
+          <div class="alert alert-error">
+            <span class="alert-icon">⚠️</span>
+            <div>
+              <strong>容易被卡（需额外许可）：</strong><br>
+              · 教育培训 → 需办学许可证<br>
+              · 网络表演/文化交流 → 需文网文<br>
+              · 互联网新闻 → 需互联网新闻许可证
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert alert-warn" style="margin-top:12px">
+        <span class="alert-icon">⚠️</span>
+        <div><strong>OPC公司特别注意：</strong>一人有限责任公司在备案时，法人就是公司唯一股东，所有证件信息需保持一致。如果公司是他人代办注册，请确认自己是法人本人，因为短信核验必须用法人手机号。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 开店步骤 ===== -->
+  <div class="section" id="section-store">
+    <div class="card">
+      <div class="card-title">🏪 微信小店注册开店详细步骤</div>
+      <div class="card-sub">完成ICP备案后，按以下步骤正式开店</div>
+
+      <div class="alert alert-success">
+        <span class="alert-icon">🎯</span>
+        <div><strong>开店入口：</strong><br>手机端：微信搜索「微信小店开店」<br>电脑端：<strong>store.weixin.qq.com</strong> → 扫码登录</div>
+      </div>
+
+      <div class="divider"></div>
+
+      <p style="font-weight:700;font-size:15px;margin-bottom:14px">📱 手机端开店（推荐，更顺畅）</p>
+
+      <div class="mat-grid">
+        <div class="mat-card required">
+          <div class="mat-icon">📄</div>
+          <div class="mat-title">第1步：上传营业执照</div>
+          <div class="mat-note">拍摄清晰照片，系统自动OCR。确认公司名称、统一社会信用代码无误</div>
+        </div>
+        <div class="mat-card required">
+          <div class="mat-icon">🪪</div>
+          <div class="mat-title">第2步：上传法人身份证</div>
+          <div class="mat-note">正反面清晰照片。若有视频号/公众号可一键同步，节省时间</div>
+        </div>
+        <div class="mat-card required">
+          <div class="mat-icon">👤</div>
+          <div class="mat-title">第3步：绑定超级管理员</div>
+          <div class="mat-note">建议绑定自己的微信。若非法人本人，需30天内法人扫码或公户验证</div>
+        </div>
+        <div class="mat-card required">
+          <div class="mat-icon">🏦</div>
+          <div class="mat-title">第4步：绑定收款账户</div>
+          <div class="mat-note">对公账户名需与营业执照完全一致，银行卡号、开户行填写准确</div>
+        </div>
+        <div class="mat-card required">
+          <div class="mat-icon">✍️</div>
+          <div class="mat-title">第5步：签署开店协议</div>
+          <div class="mat-note">在线电子签名，认真阅读服务条款，尤其是退款和违规条款</div>
+        </div>
+        <div class="mat-card required">
+          <div class="mat-icon">🏪</div>
+          <div class="mat-title">第6步：设置店铺信息</div>
+          <div class="mat-note">店名+Logo。建议店名包含艺人名或品牌特色，便于粉丝识别</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="two-col">
+        <div>
+          <p style="font-weight:700;margin-bottom:10px">⏰ 各步骤等待时间</p>
+          <div style="font-size:14px;color:#555">
+            <div style="padding:8px 0;border-bottom:1px solid var(--border)">身份验证：<strong style="color:var(--green)">即时</strong></div>
+            <div style="padding:8px 0;border-bottom:1px solid var(--border)">账户验证：<strong style="color:var(--green)">1个工作日</strong></div>
+            <div style="padding:8px 0;border-bottom:1px solid var(--border)">开店审核：<strong style="color:var(--orange)">1-3个工作日</strong></div>
+            <div style="padding:8px 0">品牌认证（可选）：<strong style="color:var(--orange)">1-3天</strong></div>
+          </div>
+        </div>
+        <div>
+          <p style="font-weight:700;margin-bottom:10px">🔗 已有微信生态账号？</p>
+          <div class="alert alert-info" style="margin:0">
+            <span class="alert-icon">💡</span>
+            <div style="font-size:13px">如果已有<strong>公众号</strong>或<strong>视频号</strong>，可以在开店时一键绑定，共享粉丝流量和主体信息，无需重复提交证件，强烈推荐！</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 商品上架 ===== -->
+  <div class="section" id="section-upload">
+    <div class="card">
+      <div class="card-title">📦 商品上架完整教程</div>
+      <div class="card-sub">针对艺人公司的教育产品/服务产品，手把手教你发布第一件商品</div>
+
+      <div class="divider"></div>
+      <p style="font-weight:700;font-size:15px;margin-bottom:12px">🔑 课程类商品信息填写要点</p>
+
+      <table class="simple-table">
+        <tr>
+          <th>字段</th>
+          <th>填写建议</th>
+          <th>常见错误</th>
+        </tr>
+        <tr>
+          <td><strong>商品标题</strong></td>
+          <td>不超过34字，包含核心关键词（如：「XX老师 声乐教学课」）</td>
+          <td>标题含联系方式/承诺语</td>
+        </tr>
+        <tr>
+          <td><strong>商品类型</strong></td>
+          <td>选「虚拟商品」→「教育/培训」子类</td>
+          <td>误选实物商品</td>
+        </tr>
+        <tr>
+          <td><strong>价格</strong></td>
+          <td>设置真实销售价，可同时设置划线原价</td>
+          <td>价格为0或过低会被审核拒绝</td>
+        </tr>
+        <tr>
+          <td><strong>主图</strong></td>
+          <td>900×900px，纯色/场景背景，突出产品</td>
+          <td>含二维码/联系方式/对比效果</td>
+        </tr>
+        <tr>
+          <td><strong>详情描述</strong></td>
+          <td>说明：适合谁学 · 学什么 · 如何学 · 学完能做什么</td>
+          <td>过于简单，或夸大效果</td>
+        </tr>
+        <tr>
+          <td><strong>发货方式</strong></td>
+          <td>选「虚拟自动发货」，上传课程兑换码或填写跳转链接</td>
+          <td>未设置发货方式导致无法购买</td>
+        </tr>
+        <tr>
+          <td><strong>售后政策</strong></td>
+          <td>明确说明「虚拟商品不支持7天无理由退款」</td>
+          <td>不填售后政策，易引发纠纷</td>
+        </tr>
+      </table>
+
+      <div class="divider"></div>
+
+      <p style="font-weight:700;font-size:15px;margin-bottom:12px">💡 课程内容托管方案推荐</p>
+      <div class="mat-grid">
+        <div class="mat-card required">
+          <div class="mat-icon">🐟</div>
+          <div class="mat-title">小鹅通（推荐）</div>
+          <div class="mat-note">专业知识付费平台，支持视频/音频/图文课程，可生成购买链接嵌入小店</div>
+        </div>
+        <div class="mat-card required">
+          <div class="mat-icon">⭐</div>
+          <div class="mat-title">知识星球</div>
+          <div class="mat-note">社群+内容模式，适合需要持续互动和内容更新的服务类产品</div>
+        </div>
+        <div class="mat-card optional">
+          <div class="mat-icon">☁️</div>
+          <div class="mat-title">腾讯文档/网盘</div>
+          <div class="mat-note">免费简单，适合图文类、PDF类课程资料，付款后发送链接</div>
+        </div>
+        <div class="mat-card optional">
+          <div class="mat-icon">🎥</div>
+          <div class="mat-title">腾讯视频/B站</div>
+          <div class="mat-note">视频课程可设置付费观看，生成付费链接，付款后发送给买家</div>
+        </div>
+      </div>
+
+      <div class="alert alert-warn" style="margin-top:16px">
+        <span class="alert-icon">⚠️</span>
+        <div><strong>虚拟商品审核重点：</strong>微信审核会检查你的课程内容是否真实存在（不能是空壳商品）、价格是否合理、描述是否夸大宣传。建议在商品描述中包含试听/试读链接，通过率更高。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 避坑手册 ===== -->
+  <div class="section" id="section-pitfalls">
+    <div class="card">
+      <div class="card-title">⚠️ 避坑手册：15个高频问题</div>
+      <div class="card-sub">从真实踩坑案例中总结，每个坑都附有解决方案</div>
+
+      <div class="pitfall-list">
+        <div class="pitfall-item">
+          <div class="pitfall-q">🔴 坑1：营业执照经营范围含「教育培训」被要求提供办学许可证</div>
+          <div class="pitfall-a">ICP备案时，如果经营范围含「教育培训」字样，工信部和微信平台都可能要求提供办学许可证，而办学许可证审批极其复杂。</div>
+          <div class="solution">✅ 解决方案：将营业执照经营范围中的「教育培训」改为「教育咨询」「教育信息咨询」「非学历职业技能教育培训」，这些表述同样可以开展教育业务，但无需办学许可证。需要去工商局办理经营范围变更（通常1-3天）。</div>
+        </div>
+
+        <div class="pitfall-item">
+          <div class="pitfall-q">🔴 坑2：域名和服务器不在同一服务商，备案被退回</div>
+          <div class="pitfall-a">许多人在A平台买域名，B平台买服务器，导致备案系统无法匹配，反复被退回修改。</div>
+          <div class="solution">✅ 解决方案：域名和服务器统一在阿里云或腾讯云购买，两者在同一服务商的备案审核效率最高，问题最少。</div>
+        </div>
+
+        <div class="pitfall-item">
+          <div class="pitfall-q">🟡 坑3：法人手机号未收到ICP核验短信</div>
+          <div class="pitfall-a">工信部在服务商初审通过后会给法人手机号发送核验短信，若号码变更或被屏蔽，24小时内未验证备案作废。</div>
+          <div class="solution">✅ 解决方案：备案前确认法人手机号正常使用，关注发件号096019920010的短信，可能在垃圾箱。若超时，需重新发起备案申请。</div>
+        </div>
+
+        <div class="pitfall-item">
+          <div class="pitfall-q">🟡 坑4：开店时超级管理员不是法人本人，被要求额外验证</div>
+          <div class="pitfall-a">若超级管理员和法人不是同一人，系统会要求30天内完成法人扫码验证或公户打款验证，若超时需重新提交资料。</div>
+          <div class="solution">✅ 解决方案：OPC公司只有一个人，直接绑定自己的微信作为超级管理员即可。如需他人代为管理，完成法人扫码验证后赋予对方运营权限。</div>
+        </div>
+
+        <div class="pitfall-item">
+          <div class="pitfall-q">🔴 坑5：申请教育类目提交了「教育培训」而非具体子类目</div>
+          <div class="pitfall-a">「教育培训」是一级大类，直接申请这个大类会失败。微信要求选择具体的二级/三级类目。</div>
+          <div class="solution">✅ 解决方案：在类目管理中找到具体子类目，如「职业培训/技能培训」「兴趣爱好/才艺培训」「在线教育」等，根据你的课程内容匹配最合适的子类目申请。</div>
+        </div>
+
+        <div class="pitfall-item">
+          <div class="pitfall-q">🟡 坑6：商品图片含二维码/联系方式被拒</div>
+          <div class="pitfall-a">微信小店严格禁止商品图片和详情页中包含：二维码、电话号码、第三方平台链接（淘宝、抖音等）。</div>
+          <div class="solution">✅ 解决方案：所有图片去除联系方式和二维码，课程内容跳转链接写在「发货信息」而非图片中。</div>
+        </div>
+
+        <div class="pitfall-item">
+          <div class="pitfall-q">🟡 坑7：收款账户打款验证金额输入错误</div>
+          <div class="pitfall-a">开店时系统会向绑定账户打入0.01-0.99元不等的验证金额，需精确输入，3次错误会锁定。</div>
+          <div class="solution">✅ 解决方案：绑定后立即查看银行账户流水，通常1-2小时内到账，金额精确到分，输入时不要四舍五入。</div>
+        </div>
+
+        <div class="pitfall-item">
+          <div class="pitfall-q">🔴 坑8：虚拟商品选错发货方式，买家付款后收不到商品</div>
+          <div class="pitfall-a">如果选了「实物商品发货」流程，买家付款后系统要求填运单号，无法发出虚拟课程。</div>
+          <div class="solution">✅ 解决方案：创建商品时必须选「虚拟商品」，发货方式选「自动发货」（系统自动发兑换码）或「手动发货」（客服24小时内发送课程链接），两者均需提前配置好课程交付内容。</div>
+        </div>
+
+        <div class="pitfall-item">
+          <div class="pitfall-q">🟡 坑9：课程标题含夸大效果表述被审核拒绝</div>
+          <div class="pitfall-a">如「100%保证成功」「学完必赚10万」「最强/第一/唯一」等表述会被系统自动拦截。</div>
+          <div class="solution">✅ 解决方案：标题使用客观描述性语言，如「XX老师 30节声乐基础课·从零起步」，避免绝对化用语和金融收益承诺。</div>
+        </div>
+
+        <div class="pitfall-item">
+          <div class="pitfall-q">🟡 坑10：ICP备案通过后忘记在微信小店提交备案号</div>
+          <div class="pitfall-a">很多人拿到ICP备案号后不知道还要在小店后台提交，导致教育类目审核一直通不过。</div>
+          <div class="solution">✅ 解决方案：备案通过后立即登录微信小店后台→店铺设置→资质管理→上传ICP备案号截图，与类目资质一起提交。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 通用技能包 ===== -->
+  <div class="section" id="section-skill">
+    <div class="card">
+      <div class="card-title">🧩 通用技能包设计方案</div>
+      <div class="card-sub">可复用模块，服务所有OPC艺人公司 / 内容创作者 / 知识付费从业者</div>
+
+      <div class="alert alert-info">
+        <span class="alert-icon">💡</span>
+        <div>这套技能包的设计思路是：将整个开店流程拆解为<strong>独立的可复用模块</strong>，每个模块可以单独学习、单独执行、单独更新，不依赖其他模块。任何有相同需求的人都能直接取用。</div>
+      </div>
+
+      <div class="divider"></div>
+      <p style="font-weight:700;font-size:16px;margin-bottom:16px">📦 核心模块（5个）</p>
+
+      <div class="module-grid">
+        <div class="module-card">
+          <div class="module-icon" style="background:#EFF5FF">🏢</div>
+          <div class="module-title">模块A：公司合规检查包</div>
+          <div class="module-desc">检查营业执照经营范围是否符合备案要求，提供修改建议和模板</div>
+          <div style="margin-top:10px">
+            <span class="skill-badge">经营范围核查表</span>
+            <span class="skill-badge">变更申请流程</span>
+          </div>
+        </div>
+
+        <div class="module-card">
+          <div class="module-icon" style="background:var(--green-light)">🔒</div>
+          <div class="module-title">模块B：ICP备案操作包</div>
+          <div class="module-desc">从域名购买到拿到备案号的全操作步骤，含常见报错解决方案</div>
+          <div style="margin-top:10px">
+            <span class="skill-badge">备案材料模板</span>
+            <span class="skill-badge">错误码手册</span>
+          </div>
+        </div>
+
+        <div class="module-card">
+          <div class="module-icon" style="background:var(--orange-light)">🏪</div>
+          <div class="module-title">模块C：小店注册开店包</div>
+          <div class="module-desc">微信小店注册全流程，含账号验证、银行绑定、审核规则等</div>
+          <div style="margin-top:10px">
+            <span class="skill-badge">截图操作指引</span>
+            <span class="skill-badge">审核通过技巧</span>
+          </div>
+        </div>
+
+        <div class="module-card">
+          <div class="module-icon" style="background:#F5EEFF">📂</div>
+          <div class="module-title">模块D：类目资质申请包</div>
+          <div class="module-desc">不同类目的资质材料清单和产品经营说明书写作模板</div>
+          <div style="margin-top:10px">
+            <span class="skill-badge">说明书模板</span>
+            <span class="skill-badge">类目对照表</span>
+          </div>
+        </div>
+
+        <div class="module-card">
+          <div class="module-icon" style="background:var(--red-light)">📦</div>
+          <div class="module-title">模块E：商品上架操作包</div>
+          <div class="module-desc">虚拟商品发布规范、图片制作要求、发货配置全流程</div>
+          <div style="margin-top:10px">
+            <span class="skill-badge">商品信息模板</span>
+            <span class="skill-badge">图片规范</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <p style="font-weight:700;font-size:16px;margin-bottom:16px">🛠️ 交付形式建议</p>
+
+      <table class="simple-table">
+        <tr>
+          <th>交付形式</th>
+          <th>适用场景</th>
+          <th>推荐指数</th>
+        </tr>
+        <tr>
+          <td>📱 H5交互指南（本页面）</td>
+          <td>手机端随时查阅，步骤清晰，可打钩记录进度</td>
+          <td>⭐⭐⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td>📊 PPT/PDF图解版</td>
+          <td>正式培训、小组分享，适合打印或投屏</td>
+          <td>⭐⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td>📋 Notion/飞书文档</td>
+          <td>团队协作，多人同时更新进度，可@提醒</td>
+          <td>⭐⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td>🎥 视频教学（屏录版）</td>
+          <td>操作演示，适合完全零基础，最直观</td>
+          <td>⭐⭐⭐⭐</td>
+        </tr>
+        <tr>
+          <td>🤖 AI问答助手</td>
+          <td>基于本知识库，遇到问题可直接提问获得解答</td>
+          <td>⭐⭐⭐⭐⭐</td>
+        </tr>
+      </table>
+
+      <div class="divider"></div>
+      <p style="font-weight:700;font-size:16px;margin-bottom:16px">📅 建议给朋友们的使用流程</p>
+      <div class="alert alert-success">
+        <span class="alert-icon">🚀</span>
+        <div>
+          <strong>Week 1（第1-7天）</strong>：完成模块A（公司合规检查）+ 模块B开始（购买域名+服务器，提交备案）<br><br>
+          <strong>Week 2-3（第8-20天）</strong>：等待ICP备案审核期间，完成模块C（注册微信小店）+ 准备商品素材<br><br>
+          <strong>Week 4（第21-30天）</strong>：拿到备案号后，完成模块D（类目申请）+ 模块E（商品上架）→ 开始接单 🎉
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 常见问答 ===== -->
+  <div class="section" id="section-faq">
+    <div class="card">
+      <div class="card-title">💬 常见问题解答</div>
+      <div class="card-sub">点击问题展开答案</div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          没有公众号/视频号，可以直接开微信小店吗？
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a">可以！微信小店是独立入口，不需要提前开通公众号或视频号。直接用微信搜索「微信小店开店」即可注册。但是，如果你已经有视频号或公众号，强烈建议绑定，因为绑定后可以共享流量，在视频号直播时直接挂购物车，推广效率大幅提升。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          个人能开微信小店吗？还是必须要公司？
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a">个体工商户也可以开微信小店！不一定要有限公司。但是要开通「教育培训」等特殊类目，通常建议注册企业（OPC一人公司或普通有限公司），因为资质审核时企业主体更容易通过，且部分类目资质只对企业开放。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          ICP备案必须买服务器吗？服务器有什么用？
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a">备案流程上需要填写服务器IP，所以技术上来说需要购买服务器。但在你的实际场景中，服务器不需要做任何设置，只是作为备案材料中的「接入服务商」存在。购买轻量应用服务器一年约100元，最便宜的配置即可。购买后只需要在备案系统填入服务器IP地址，服务器本身不需要部署任何网站。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          艺人公司的经营范围既有「演出经纪」又有「教育咨询」，ICP备案会有问题吗？
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a">不会。经营范围包含多个类目是正常的，ICP备案时只需要选择与你网站/小店内容匹配的类目即可（选「教育咨询」或「互联网信息服务」）。演出经纪属于线下业务，不影响备案。唯一需要注意的是：如果经营范围包含「网络表演」「文化交流」等字样，需要额外提供「网络文化经营许可证」（文网文），这类证件申请较麻烦，建议提前评估是否需要。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          微信小店收款后怎么提现？手续费多少？
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a">微信小店使用微信支付收款，资金进入微信商户号，可提现到绑定的对公/对私银行账户。虚拟商品（课程类）的微信支付手续费约0.6%，即卖100元收取0.6元。提现到银行账户通常T+1个工作日到账，每次提现无手续费。年销售额100万以内的小微商家可以申请0.2%的优惠费率。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          类目申请被拒了，怎么办？
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a">
+          类目申请被拒的常见原因：<br>
+          1. 资质材料不清晰或信息不完整 → 重新拍摄清晰彩色照片<br>
+          2. 产品经营说明书过于简单 → 详细说明课程内容、师资、受众（至少200字）<br>
+          3. 营业执照经营范围与申请类目不匹配 → 先变更经营范围<br>
+          4. ICP备案号未提交 → 检查资质管理中是否已上传<br><br>
+          拒绝后微信会给出具体原因，根据提示修改后可重新提交。通常修改后再次申请通过率较高。
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          一个营业执照能开几个微信小店？
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a">根据微信官方规定，1个营业执照最多可以开设30个微信小店。对于OPC艺人公司来说，一般一个公司对应一个小店就够了，如果旗下有多个艺人/品牌，可以在同一个小店内分类上架商品，也可以开设多个小店分别运营。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          课程需要提前录好吗？还是可以边卖边录？
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a">微信小店本身不审核课程内容，只审核商品信息的合规性。所以技术上可以先上架再录制。但实际操作建议：至少准备好3-5节示例课程内容，并在商品详情中说明「将持续更新」，这样审核通过率更高，买家体验也更好。同时建议在商品描述中明确说明课程交付时间表，避免买家投诉。</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end main -->
+
+<!-- Bottom bar -->
+<div class="bottom-bar">
+  <div class="progress-mini">
+    <span>备料进度：</span>
+    <span class="count" id="bottom-progress">1/14</span>
+    <span>项已完成</span>
+  </div>
+  <button class="btn-primary" onclick="downloadGuide()">📥 保存指南</button>
+</div>
+
+<script>
+// Tab switching
+function switchTab(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('section-' + id).classList.add('active');
+  event.currentTarget.classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+// Checklist toggle
+let checkedCount = 1; // first item pre-checked
+const totalItems = 14;
+
+function toggleCheck(item) {
+  const box = item.querySelector('.check-box');
+  const isChecked = box.classList.contains('checked');
+  if (isChecked) {
+    box.classList.remove('checked');
+    box.textContent = '';
+    checkedCount = Math.max(0, checkedCount - 1);
+  } else {
+    box.classList.add('checked');
+    box.textContent = '✓';
+    checkedCount++;
+  }
+  updateProgress();
+}
+
+function updateProgress() {
+  const pct = (checkedCount / totalItems * 100).toFixed(0);
+  const fill = document.getElementById('progress-bar-fill');
+  const text = document.getElementById('progress-text');
+  const bottom = document.getElementById('bottom-progress');
+  if (fill) fill.style.width = pct + '%';
+  if (text) text.textContent = checkedCount;
+  if (bottom) bottom.textContent = checkedCount + '/' + totalItems;
+}
+
+// Initialize first item as checked
+window.addEventListener('DOMContentLoaded', () => {
+  const firstItem = document.querySelector('.checklist li');
+  if (firstItem) {
+    const box = firstItem.querySelector('.check-box');
+    box.classList.add('checked');
+    box.textContent = '✓';
+  }
+  updateProgress();
+});
+
+// FAQ toggle
+function toggleFaq(el) {
+  const answer = el.nextElementSibling;
+  const isOpen = answer.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
+  document.querySelectorAll('.faq-q').forEach(q => q.classList.remove('open'));
+  // Open clicked (if was closed)
+  if (!isOpen) {
+    answer.classList.add('open');
+    el.classList.add('open');
+  }
+}
+
+// Download / print
+function downloadGuide() {
+  window.print();
+}
+</script>
+
+<style>
+@media print {
+  .nav, .bottom-bar { display: none; }
+  .section { display: block !important; }
+  body { background: white; }
+  .hero { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+}
+</style>
+
+</body>
+</html>
